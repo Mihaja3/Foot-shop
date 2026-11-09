@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    container_name: foot-web
+    ports: ["8080:80"]
+    volumes: ["./src:/var/www/html"]
+    networks: [foot-net]
+
+networks:
+  foot-net:
+    external: true
